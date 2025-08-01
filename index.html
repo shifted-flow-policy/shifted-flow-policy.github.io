@@ -5,8 +5,8 @@
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="Adaptive Diffusion Policy"/>
-  <meta property="og:description" content="Adaptive Diffusion Policy"/>
+  <meta property="og:title" content="Shifted Flow Policy"/>
+  <meta property="og:description" content="Shifted Flow Policy"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Adaptive Diffusion Policy: Efficient Robot Action Generation with Cascaded Diffusion</title>
+  <title>Beyond Action Chunking: Shifted Flow for Scalable Visuomotor Policy Learning</title>
   <link rel="icon" type="image/x-icon" href="">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Adaptive Diffusion Policy: Efficient Robot Action Generation with Cascaded Diffusion</h1>
+            <h1 class="title is-1 publication-title">Beyond Action Chunking: Shifted Flow for Scalable Visuomotor Policy Learning</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -98,7 +98,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/adaptive-diffusion-policy/adaptive-diffusion-policy" target="_blank"
+                    <a href="https://github.com/shifted-flow-policy/shifted-flow-policy" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -166,7 +166,7 @@
         <h2 class="title is-3" style="text-align:left">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Diffusion models have demonstrated remarkable capabilities in generating high-quality data across various domains, including robotic action generation. However, existing diffusion-based policies often incur high computational costs due to iterative inference steps and lacks temporal bias during denoising. To address these challenges, we propose Adaptive Diffusion Policy (ADP), a novel approach that enhances both efficiency and performance in robotic action generation. ADP introduces two key components: Cascaded Diffusion, which enables efficient action synthesis by generating actions at each diffusion step while maintaining full process coverage, and Adaptive Rollout, which dynamically adjusts the noise scale based on the characteristics of the action sequence to balance performance and inference speed. Through comprehensive evaluations, ADP significantly outperforms current state-of-the-art diffusion-based policies in both performance and inference speed. Our method establishes a new benchmark for scalable and effective diffusion-based robotic action generation, offering a promising direction for future research in autonomous systems.
+            Imitation learning for robotics often uses action chunking to mitigate the compounding errors associated with autoregressive policies. By predicting multiple future actions simultaneously, action chunking limits the accumulation of errors but introduces new difficulties. In particular, it relies on outdated observations to predict future actions, which can lead to inaccuracies. In this study, we propose Shifted Flow Policy (SFP), a simple yet effective alternative to action chunking. The SFP reparameterizes time by linearly shifting the time steps for future actions, thereby capturing the natural increase in uncertainty over time. This formulation allows each predicted action to be conditioned on up-to-date observations. Experimental results on the Push-T and MimicGen benchmarks demonstrate that SFP outperforms state-of-the-art action chunking methods across a variety of manipulation tasks by achieving higher success rates and faster inference. These findings suggest that shifted flow provides a robust and practical alternative to action chunking in visuomotor policy learning.
           </p>
         </div>
       </div>

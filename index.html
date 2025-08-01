@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="Adaptive Diffusion Policy"/>
+  <meta property="og:description" content="Adaptive Diffusion Policy"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Adaptive Diffusion Policy: Efficient Robot Action Generation with Cascaded Diffusion</title>
+  <link rel="icon" type="image/x-icon" href="">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Adaptive Diffusion Policy: Efficient Robot Action Generation with Cascaded Diffusion</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                
+                * Anonymous </span>
+                <!--<a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                  </span> -->
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><!--Institution Name--><br>Submitted to International Conference on Computer Vision, ICCV 2025</span>
+                    <!--<span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>-->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <!--span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span-->
+
+                    <!-- Supplementary PDF link -->
+                    <!--span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                    </span-->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/adaptive-diffusion-policy/adaptive-diffusion-policy" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <!--span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+                    </span-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+<!--       <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        
+        <img src="static/images/fig.jpg" alt="MY ALT TEXT"/>
+<!--         <source src="static/videos/banner_video.mp4"
+        type="video/mp4"> -->
+      </video>
+      <h2 class="content has-text-justified">
+          Overview of the Proposed Adaptive Diffusion Policy (ADP) Architecture: (a) Diffusion Policy requires <i>T</i> steps to generate an action. (b) Our Adaptive Diffusion Policy leverages a sliding-window approach and a single-step diffusion process, incorporating temporal bias to produce actions in just one diffusion step. Cascaded Diffusion is denoted as CD. (c) The detailed structure of the Cascade Diffusion block of ADP. The blue lines represent the Adaptive Rollout mechanism. 
+      </h2>
+      <section class="hero is-small">
+<!--    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+<!--         <img src="static/images/fig.jpg"  alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Overview of the Proposed ADP Architecture: (a) Diffusion Policy requires <i>T</i> steps to generate an action. (b) Our Adaptive Diffusion Policy leverages a sliding-window approach and a single-step diffusion process, incorporating temporal bias to produce actions in just one diffusion step. Cascaded Diffusion is denoted as CD. (c) The detailed structure of the Cascade Diffusion block of ADP. The blue lines represent the Adaptive Rollout mechanism. 
+        </h2>
+      </div>
+     
+  </div>  -->
+</div>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="text-align:left">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion models have demonstrated remarkable capabilities in generating high-quality data across various domains, including robotic action generation. However, existing diffusion-based policies often incur high computational costs due to iterative inference steps and lacks temporal bias during denoising. To address these challenges, we propose Adaptive Diffusion Policy (ADP), a novel approach that enhances both efficiency and performance in robotic action generation. ADP introduces two key components: Cascaded Diffusion, which enables efficient action synthesis by generating actions at each diffusion step while maintaining full process coverage, and Adaptive Rollout, which dynamically adjusts the noise scale based on the characteristics of the action sequence to balance performance and inference speed. Through comprehensive evaluations, ADP significantly outperforms current state-of-the-art diffusion-based policies in both performance and inference speed. Our method establishes a new benchmark for scalable and effective diffusion-based robotic action generation, offering a promising direction for future research in autonomous systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+<!-- Simulation MimicGen -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="text-align:left">Simulation (MimicGen)</h2>
+        &ensp;
+            
+        <!-- 1st row: 5 videos -->
+<div class="columns is-multiline is-centered has-text-centered">
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/square.mp4" type="video/mp4">
+    </video>
+    <h2>Square</h2>
+  </div>
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/threading.mp4" type="video/mp4">
+    </video>
+    <h2>Threading</h2>
+  </div>
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/coffee.mp4" type="video/mp4">
+    </video>
+    <h2>Coffee</h2>
+  </div>
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/three_piece_assembly.mp4" type="video/mp4">
+    </video>
+    <h2>Three-Piece Assembly</h2>
+  </div>
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/hammer_cleanup.mp4" type="video/mp4">
+    </video>
+    <h2>Hammer Clean-Up</h2>
+  </div>
+
+  <!-- 2nd row: 5 more videos -->
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/mug_cleanup.mp4" type="video/mp4">
+    </video>
+    <h2>Mug Clean-Up</h2>
+  </div>
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/kitchen.mp4" type="video/mp4">
+    </video>
+    <h2>Kitchen</h2>
+  </div>
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/nut_assembly.mp4" type="video/mp4">
+    </video>
+    <h2>Nut Assembly</h2>
+  </div>
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/pick_place.mp4" type="video/mp4">
+    </video>
+    <h2>Pick Place</h2>
+  </div>
+  <div class="column is-one-fifth">
+    <video width="100%" autoplay muted loop controls>
+      <source src="simulations/coffee_preparation.mp4" type="video/mp4">
+    </video>
+    <h2>Coffee Preparation</h2>
+  </div>
+</div>
+
+    
+        <div class="content has-text-justified">
+          &ensp;
+          <p>
+            We evaluated ADP on a diverse set of tasks from the MimicGen benchmark, which features high-precision, contact-rich, and long-horizon manipulation scenarios. MimicGen is known for its challenging setups, including randomized initial states, object variations, and complex multi-step goals such as coffee preparation or multi-part assembly.
+
+
+          </p>
+         Our simulation results demonstrate that ADP performs robustly across these diverse settings, achieving strong task success rates while maintaining low inference latency. Notably, ADP successfully handles fine-grained manipulation and sequential planning challenges that are difficult for prior diffusion-based policies.
+</p>
+          <p>
+The videos above highlight the qualitative performance of ADP on several MimicGen tasks. These results validate ADP's effectiveness in generating accurate and temporally consistent actions even in highly dynamic and unpredictable environments. </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End -->
+
+
+
+
+  
+
+<!-- Simulation Push-T -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="text-align:left">Simulation (Push-T)</h2>
+        &ensp;
+            
+        <div class="columns is-centered has-text-centered">
+          <!-- Left video -->
+          <div class="column is-half">
+            <div class="item item-video2">
+              <video height="180" width="100%" poster="" id="video2" autoplay controls muted loop>
+                <source src="static/videos/dp.mp4" type="video/mp4">
+              </video>
+              <h2>Diffusion Policy</h2>
+            </div>
+          </div>
+        
+          <!-- Right video -->
+          <div class="column is-half">
+            <div class="item item-video1">
+              <video height="180" width="100%" poster="" id="video1" autoplay controls muted loop>
+                <source src="static/videos/adp.mp4" type="video/mp4">
+              </video>
+              <h2>Adaptive Diffusion Policy (Ours)</h2>
+            </div>
+          </div>
+        </div>
+    
+        <div class="content has-text-justified">
+          &ensp;
+          <p>
+            To further illustrate the effectiveness of the proposed ADP compared to the DP, we present a visualization of the Push-T simulation results. As shown in the videos, we compare the action sequences generated by both models under identical conditions.
+          
+          Each video depicts action predictions from the same seed, allowing for a direct comparison of trajectory quality and temporal consistency.
+          </p>
+          In the case of ADP, the incorporation of temporal bias and a sliding-window-based noise removal strategy results in smoother and more stable action generation. ADP successfully leverages long-horizon forecasting by integrating Cascaded Diffusion and Adaptive Rollout, enabling consistent predictions far into the future.
+          </p>
+          <p>
+          Conversely, traditional policies exhibit temporal inconsistency and hesitates during short-horizon manipulations. Due to the absence of an adaptive mechanism, the model struggles to maintain coherent action sequences, particularly when predicting long-term movements. This hesitation results in momentary pauses or erratic motions, which are not observed in ADP.
+          </p>
+          <p>
+          These findings underscore the advantages of the proposed ADP framework in managing sequential dependencies, reducing cumulative noise, and enhancing long-term action prediction, ultimately leading to a more stable and efficient robotic motion planning algorithm.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End -->
+
+  
+<!-- Paper poster -->
+<!--section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+</section-->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            
+            Website template borrowed from <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

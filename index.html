@@ -24,7 +24,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Beyond Action Chunking: Shifted Flow for Scalable Visuomotor Policy Learning</title>
+  <title>Beyond Action Chunking: Shifted Flow for Scalable Visuomotor Policy Learning
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></title>
   <link rel="icon" type="image/x-icon" href="">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -144,12 +145,27 @@
       
       <img src="imgs/fig.jpg" alt="MY ALT TEXT"/>
       
-      <h2 class="content has-text-justified">
-          Sampling process of shifted flow. 
-        <strong>(Left) Shifted Timesteps.</strong> The timestep $t$ is continuously shifted as the action index $k$ increases. By shifting $t$ at the same rate as that at which it increases, a diagonal pattern emerges where noisy black actions are pushed towards white valid actions.
-        <strong>(Middle) Initlize Window.</strong> Following the shifted timesteps $t_w$, the window can be initialized from noise where the final actions have timesteps $t_w = [1, (W-1)/W, \cdots, 2/W, 1/W]$. 
-        <strong>(Right) Shifting Window.</strong> After retrieving the first action to execute on the environment, the window shifts to the right and adds noise to the end as a new observation $O_1$ is observed from the environment. This process is repeated to generate more actions.
-      </h2>
+        <h2>Sampling process of shifted flow</h2>
+
+        <h3>(Left) Shifted Timesteps</h3>
+        <p>
+          The timestep \( t \) is continuously shifted as the action index \( k \) increases.
+          By shifting \( t \) at the same rate as that at which it increases, a diagonal pattern emerges where noisy black actions are pushed towards white valid actions.
+        </p>
+      
+        <h3>(Middle) Initialize Window</h3>
+        <p>
+          Following the shifted timesteps \( t_w \), the window can be initialized from noise where the final actions have timesteps:
+        </p>
+        \[
+          t_w = \left[1, \frac{W-1}{W}, \cdots, \frac{2}{W}, \frac{1}{W}\right]
+        \]
+      
+        <h3>(Right) Shifting Window</h3>
+        <p>
+          After retrieving the first action to execute on the environment, the window shifts to the right and adds noise to the end as a new observation \( O_1 \) is observed from the environment.
+          This process is repeated to generate more actions.
+        </p>
       <section class="hero is-small">
 <!--    <div class="container">
       <div id="results-carousel" class="carousel results-carousel">

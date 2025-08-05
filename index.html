@@ -133,12 +133,19 @@
 <!--       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
         
-        <img src="static/images/fig.png" alt="MY ALT TEXT"/>
+        <img src="static/images/fig2.jpg" alt="MY ALT TEXT"/>
 <!--         <source src="static/videos/banner_video.mp4"
         type="video/mp4"> -->
       </video>
       <h2 class="content has-text-justified">
-          Overview of the Proposed Adaptive Diffusion Policy (ADP) Architecture: (a) Diffusion Policy requires <i>T</i> steps to generate an action. (b) Our Adaptive Diffusion Policy leverages a sliding-window approach and a single-step diffusion process, incorporating temporal bias to produce actions in just one diffusion step. Cascaded Diffusion is denoted as CD. (c) The detailed structure of the Cascade Diffusion block of ADP. The blue lines represent the Adaptive Rollout mechanism. 
+          Overview of the Proposed Shifted Flow Policy (SFP) Architecture: (Left) ction chunking predicts a fixed length sequence of actions that all share the same timestep and are executed in an open-loop manner by relying on a single observation. In contrast,(Right) shifted flow assigns linearly increasing timesteps to each action within the prediction window to model future uncertainty by enabling updated observations to condition each sampling step.
+      </h2>
+
+      
+      <img src="static/images/fig.jpg" alt="MY ALT TEXT"/>
+      
+      <h2 class="content has-text-justified">
+          Sampling process of shifted flow.
       </h2>
       <section class="hero is-small">
 <!--    <div class="container">
